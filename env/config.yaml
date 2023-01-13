@@ -1,0 +1,23 @@
+name: "go-rookie"
+mode: "dev"
+port: 8084
+log:
+  level:
+  filename:
+  max_size:
+  max_age:
+  max_backups:
+mysql:
+  host:
+  port:
+  user:
+  password:
+  dbname:
+  max_open_connection:
+  max_idle_connection:
+redis:
+  host:
+  password:
+  port:
+  db:
+  pool_size:
