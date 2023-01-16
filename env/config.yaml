@@ -2,11 +2,11 @@ name: "go-rookie"
 mode: "dev"
 port: 8084
 log:
-  level:
-  filename:
-  max_size:
-  max_age:
-  max_backups:
+  level: "debug"
+  filename: "log/go-rookie.log"
+  max_size: 200
+  max_age: 30
+  max_backups: 7
 mysql:
   host:
   port:

@@ -20,6 +20,7 @@ func Init() error {
 
 	if err = viper.Unmarshal(&Config); err != nil {
 		fmt.Println("viper Unmarshal err", err)
+		return err
 	}
 
 	viper.WatchConfig()
@@ -31,7 +32,16 @@ func Init() error {
 }
 
 type AppConfig struct {
-	Name string `mapstructure:"name"`
-	Mode string `mapstructure:"mode"`
-	Port int    `mapstructure:"port"`
+	Name      string     `mapstructure:"name"`
+	Mode      string     `mapstructure:"mode"`
+	Port      int        `mapstructure:"port"`
+	LogConfig *LogConfig `mapstructure:"log"`
+}
+
+type LogConfig struct {
+	Level      string `mapstructure:"level"`
+	FileName   string `mapstructure:"filename"`
+	MaxSize    int    `mapstructure:"max_size"`
+	MaxAge     int    `mapstructure:"max_age"`
+	MaxBackups int    `mapstructure:"max_backups"`
 }
