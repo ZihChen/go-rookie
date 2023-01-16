@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"go-rookie/app/logger"
 	"go-rookie/app/settings"
+	"go-rookie/internal/server"
 	"go.uber.org/zap"
 )
 
@@ -20,4 +21,6 @@ func main() {
 	}
 	zap.L().Debug("logger init success!")
 	defer zap.L().Sync()
+
+	server.Run()
 }
